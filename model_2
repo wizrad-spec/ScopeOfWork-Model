@@ -1,0 +1,23 @@
+class Invoice:
+    def __init__(self, project_number, project_address, brief_description):
+        self.project_number = project_number
+        self.project_address = project_address
+        self.brief_description = brief_description
+        self.tasks = []
+        self.total_charge_amount = 0.0
+        self.gst = 0.1  # Assuming 10% GST
+
+    def add_task(self, task):
+        self.tasks.append(task)
+
+    def update_total_charge(self):
+        self.total_charge_amount = sum(task['charge'] for task in self.tasks)
+        self.total_charge_including_gst = self.total_charge_amount * (1 + self.gst)
+
+    def analyze_invoices(invoices):
+        # TO DO: Implement analysis logic
+        pass
+
+    def generate_future_invoice(invoices):
+        # TO DO: Implement generation logic
+        pass
